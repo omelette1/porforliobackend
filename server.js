@@ -12,12 +12,12 @@ app.use(express.static(buildPath));
 
 
 const corsOptions={
-  origin:'',
+  origin:'http://localhost:3000',
   optionsSuccessStatus:200
 }
 app.use(cors(corsOptions))
 
-app.post('http://localhost:3000', (req, res) => {
+app.post('/send', (req, res) => {
   try {
     const mailOptions = {
       from: req.body.email,
